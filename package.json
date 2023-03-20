@@ -3,7 +3,7 @@
 	"title": "jQuery Validation Plugin",
 	"description": "Client-side form validation made easy",
 	"version": "1.19.5",
-	"homepage": "https://jqueryvalidation.org/",
+	"homepage": "https://github.com/shhade/jquery-validation/tree/develop/",
 	"license": "MIT",
 	"author": {
 		"name": "Jörn Zaefferer",
@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/jquery-validation/jquery-validation.git"
+		"url": "git://github.com/shhade/jquery-validation.git"
 	},
 	"bugs": {
 		"url": "https://github.com/jquery-validation/jquery-validation/issues"

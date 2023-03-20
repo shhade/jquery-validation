@@ -1,9 +1,9 @@
 /*!
  * jQuery Validation Plugin v1.19.5
  *
- * https://jqueryvalidation.org/
+ * https://github.com/shhade/jquery-validation/tree/develop/
  *
- * Copyright (c) 2022 Jörn Zaefferer
+ * Copyright (c) 2023 Jörn Zaefferer
  * Released under the MIT license
  */
 (function( factory ) {

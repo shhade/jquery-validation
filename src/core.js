@@ -1541,7 +1541,7 @@ $.extend( $.validator, {
 		},
 
 		// https://jqueryvalidation.org/remote-method/
-		remote: function( value, element, param, method ) {
+		remote: function( value, element, param, method, traditional ) {
 			if ( this.optional( element ) ) {
 				return "dependency-mismatch";
 			}
@@ -1558,7 +1558,8 @@ $.extend( $.validator, {
 			this.settings.messages[ element.name ][ method ] = previous.message;
 
 			param = typeof param === "string" && { url: param } || param;
-			optionDataString = $.param( $.extend( { data: value }, param.data ) );
+			traditional = typeof traditional === "undefined" ? $.ajaxSettings.traditional : traditional;
+			optionDataString = $.param( $.extend( { data: value }, param.data ), traditional );
 			if ( previous.old === optionDataString ) {
 				return previous.valid;
 			}

@@ -1,9 +1,9 @@
 /*!
  * jQuery Validation Plugin v1.19.5
  *
- * https://jqueryvalidation.org/
+ * https://github.com/shhade/jquery-validation/tree/develop/
  *
- * Copyright (c) 2022 Jörn Zaefferer
+ * Copyright (c) 2023 Jörn Zaefferer
  * Released under the MIT license
  */
 (function( factory ) {
@@ -1559,7 +1559,7 @@ $.extend( $.validator, {
 		},
 
 		// https://jqueryvalidation.org/remote-method/
-		remote: function( value, element, param, method ) {
+		remote: function( value, element, param, method, traditional ) {
 			if ( this.optional( element ) ) {
 				return "dependency-mismatch";
 			}
@@ -1576,7 +1576,8 @@ $.extend( $.validator, {
 			this.settings.messages[ element.name ][ method ] = previous.message;
 
 			param = typeof param === "string" && { url: param } || param;
-			optionDataString = $.param( $.extend( { data: value }, param.data ) );
+			traditional = typeof traditional === "undefined" ? $.ajaxSettings.traditional : traditional;
+			optionDataString = $.param( $.extend( { data: value }, param.data ), traditional );
 			if ( previous.old === optionDataString ) {
 				return previous.valid;
 			}
